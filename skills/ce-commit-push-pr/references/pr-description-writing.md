@@ -170,9 +170,11 @@ Lead with the point, then the mechanism, then the caveat. Dense is good; long is
 
 ## Step C: Assemble the body
 
-In order: opening → body sections that earn their keep → related references when they need their own block → test plan if non-obvious → New concepts section when Step B2 produced one → evidence block if one exists → branding block when Step D calls for one.
+In order: opening → body sections that earn their keep → related references when they need their own block → test plan if non-obvious → session-settled provenance sentence when a labeled plan is in hand → New concepts section when Step B2 produced one → evidence block if one exists → branding block when Step D calls for one.
 
 The opening goes under `## Summary` if the body uses any `##` headings; bare paragraph otherwise. No orphaned opening paragraphs above the first heading.
+
+**Session-settled provenance:** when a plan for this change is in hand — a path passed by the caller (e.g., a pipeline threads it) or a plan already known from the conversation — and that plan contains `session-settled:`-labeled KTDs, include one static sentence naming the settled decisions and their classes, e.g. "Session-settled decisions carried from planning: X (user-directed, over Y); Z (user-approved)." Only when the caller's run flagged proceed-under-conflict notes, add a clause noting each such decision proceeded under a flagged concern. This is a point-in-time description element: never an outstanding-items ledger, never updated after the PR opens, no checklist. When no plan is in hand or it has no labeled KTDs, omit the element entirely — standalone runs without a plan simply never fire it; do not hunt for plans.
 
 **Evidence handling:** preserve any existing `## Demo` or `## Screenshots` block verbatim unless the user's focus asks to refresh it. If the caller passed a freshly captured URL or path, splice as `## Demo`. Otherwise omit. Place before the badge. Never label test output as "Demo" or "Screenshots."
 
@@ -206,4 +208,4 @@ Before returning the body, check it against the material claims from Step A and 
 
 - Is every claim the diff can't establish present — and is any claim the diff *does* show restated needlessly?
 - Is decision-changing evidence stated as a result rather than collapsed into an unexplained "tests passed", with demonstrated results kept distinct from assumptions and from mixed or negative outcomes?
-- Can any sentence or section of the *description* be cut without lowering reviewer confidence? If so, cut it. For a new PR with branding enabled, retain the Step D footer; it is intentional attribution rather than descriptive content.
+- Can any sentence or section of the *description* be cut without lowering reviewer confidence? If so, cut it. For a new PR with branding enabled, retain the Step D footer; it is intentional attribution rather than descriptive content. Likewise retain the session-settled provenance sentence when Step C included one; it carries decision provenance the diff cannot show.
